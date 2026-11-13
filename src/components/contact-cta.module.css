@@ -1,0 +1,36 @@
+﻿.section { isolation: isolate; }
+.section :global(.contact-heading h2) { font-size: clamp(38px, 5.6vw, 68px); }
+.section :global(.contact-heading)::before { width: min(650px, 105%); height: 320px; top: -25px; border-color: #bdfb1f12; background: radial-gradient(ellipse, #bdfb1f0b, transparent 65%); }
+.section :global(.contact-layout) { max-width: 680px; margin-top: 26px; }
+.section :global(.copy-status:empty) { min-height: 0; margin: 0; }
+.form { position: relative; padding: 0; margin-top: 36px; border: 0; border-radius: 0; background: none; box-shadow: none; gap: 26px; }
+.form :global(.contact-methods) { display: flex; justify-content: flex-start; width: 100%; margin: 0 0 26px; padding: 0; gap: 28px; border: 0; border-radius: 0; background: none; }
+.form :global(.contact-methods label) { justify-content: flex-start; min-height: 44px; padding: 0 0 8px; border-radius: 0; font-size: 14px; color: #92958d; }
+.form :global(.contact-methods label)::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #bdfb1f; transform: scaleX(0); transform-origin: left; transition: transform 250ms ease; }
+.form :global(.contact-methods label:has(input:checked)) { color: #fff; }
+.form :global(.contact-methods label:has(input:checked))::after { transform: scaleX(1); }
+.form :global(.contact-field-window) { border-radius: 0; }
+.form :global(.reply-panel) { padding: 0; }
+.form :global(.floating-field) { border: 0; border-bottom: 1px solid #ffffff26; border-radius: 0; background: transparent; }
+.form :global(.floating-field:focus-within) { border-color: #bdfb1f66; background: transparent; }
+.form :global(.contact-input) { min-height: 70px; padding: 28px 0 12px; font-size: 16px; }
+.form :global(.contact-input)::placeholder { opacity: 1; color: #73776d; }
+.form :global(.floating-field > label) { left: 0; top: 0; max-width: 100%; font-size: 14px; line-height: 24px; color: #a5a99e; transform: none; }
+.form :global(.contact-input:focus + label) { color: #bdfb1f; transform: translateX(3px); }
+.form :global(.contact-input:not(:placeholder-shown) + label) { transform: none; }
+.form :global(.contact-textarea) { min-height: 116px; padding-top: 30px; }
+.form :global(.field-focus-line) { height: 1px; }
+.form :global(button[type="submit"]) { justify-content: space-between; min-height: 52px; padding: 12px 24px; margin-top: 4px; border-radius: 999px; font-size: 14px; box-shadow: none; }
+.form :global(button[type="submit"] svg) { width: 21px; height: 21px; transition: transform 180ms ease; }
+.form :global(button[type="submit"]:hover svg) { transform: translate(2px, -2px); }
+.form :global(.contact-delivery-note) { margin: -10px auto 0; max-width: 100%; }
+.form :global([role="status"]:empty) { display: none; }
+@media(max-width: 767px) {
+  .section :global(.contact-heading h2) { font-size: clamp(34px, 8.7vw, 58px); }
+  .form { margin-top: 28px; gap: 22px; }
+  .form :global(.contact-methods) { margin-bottom: 22px; gap: 24px; }
+  .form :global(button[type="submit"]) { padding-inline: 20px; }
+}
+@media(prefers-reduced-motion: reduce) {
+  .form :global(.contact-input:focus + label), .form :global(button[type="submit"]:hover svg) { transform: none; }
+}
