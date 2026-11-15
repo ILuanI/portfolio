@@ -51,14 +51,8 @@ function ProjectVisual({ project }: { project: Project }) {
   );
 }
 
-const projectDescriptions: Record<Project["preview"], string> = {
-  dashboard: "Del requerimiento a la implementación: gestión de certificados, roles y verificación mediante QR.",
-  store: "Una experiencia de compra que conecta productos, catálogo y navegación.",
-  planner: "Organización visual para dar claridad a las tareas y al trabajo diario.",
-  portfolio: "Un espacio personal donde el diseño y el desarrollo se encuentran.",
-};
-
 function ProjectAction({ project }: { project: Project }) {
+  if (!project.action.url) return null;
   const content = <>{project.action.type === "github" && <GithubIcon />}{project.action.type === "github" ? "Ver en GitHub" : "Ver demo"}<span aria-hidden="true">↗</span></>;
   return project.action.url
     ? <a href={project.action.url} target="_blank" rel="noopener noreferrer" className="project-action" aria-label={`${project.title}: ${project.action.type === "github" ? "GitHub" : "demo"} (abre en otra pestaña)`}>{content}</a>
@@ -71,8 +65,7 @@ export default function ProjectGallery({ projects }: { projects: Project[] }) {
     <section id="proyectos" aria-labelledby="projects-title" className="projects-section">
       <CelestialArt variant="research" />
       <div className="section-heading-row">
-        <div><p className="section-kicker">03 / Proyectos <span>· Ideas construidas</span></p><h2 id="projects-title" className="section-title">PROYECTOS</h2></div>
-        <p className="section-description projects-intro">Pensamiento analítico, creatividad y código. Una selección de mi trabajo.</p>
+        <div><h2 id="projects-title" className="section-title">PROYECTOS</h2></div>
       </div>
       {featured && <article className="featured-project group">
         <div className={`featured-visual ${backgroundClasses[featured.preview]}`}>
@@ -82,17 +75,19 @@ export default function ProjectGallery({ projects }: { projects: Project[] }) {
         <div className="featured-project-copy">
           <p className="section-kicker">Proyecto destacado</p>
           <h3>{featured.title}</h3>
-          <p>{projectDescriptions[featured.preview]}</p>
+          <p>{featured.description}</p>
+          <ul className="project-technologies" aria-label="Tecnologías">{featured.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
           <ProjectAction project={featured} />
         </div>
       </article>}
       <ul className="project-grid">
-        {others.map((project, index) => <li key={project.id}>
+        {others.map((project) => <li key={project.id}>
           <article className="project-card group">
-            <div className="project-card-heading"><span className="section-kicker">03.{index + 1} / {project.preview === "store" ? "Comercio" : project.preview === "planner" ? "Productividad" : "Identidad digital"}</span></div>
+            <div className="project-card-heading"><span className="section-kicker">{project.category}</span></div>
             <div className={`project-card-preview ${backgroundClasses[project.preview]}`}><ProjectVisual project={project} /></div>
             <h3>{project.title}</h3>
-            <p>{projectDescriptions[project.preview]}</p>
+            <p>{project.description}</p>
+            <ul className="project-technologies" aria-label="Tecnologías">{project.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
             <ProjectAction project={project} />
           </article>
         </li>)}

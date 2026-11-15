@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import CelestialArt from "@/components/celestial-art";
 import type { Experience } from "@/data/experiences";
 
 const svgProps = {
@@ -71,8 +70,8 @@ function ExperienceDetails({ experience }: { experience: Experience }) {
 }
 
 function CompanyMark({ experience }: { experience: Experience }) {
-  return <span className="company-mark">
-    {experience.logo ? <Image src={experience.logo} alt="" width={48} height={48} className="h-full w-full object-contain" /> : <BuildingIcon />}
+  return <span className={`company-mark${experience.logo ? " has-logo" : ""}`}>
+    {experience.logo ? <Image src={experience.logo} alt="" fill sizes="48px" className="object-contain" /> : <BuildingIcon />}
   </span>;
 }
 
@@ -84,11 +83,9 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
 
   return (
     <section id="experiencia" aria-labelledby="experience-title" className="journey-section">
-      <CelestialArt variant="planet" />
       <div className="section-heading-row">
         <div>
-          <p className="section-kicker">02 / Experiencia <span>· Mi trayectoria</span></p>
-          <h2 id="experience-title" className="section-title">MI RECORRIDO</h2>
+          <h2 id="experience-title" className="section-title">EXPERIENCIA</h2>
           <p className="section-description">Las experiencias que dan forma a mi manera de construir.</p>
         </div>
         {!!experiences.length && <button type="button" aria-pressed={showComplete} aria-controls="experience-content" onClick={() => setShowComplete(!showComplete)} className="journey-toggle group">

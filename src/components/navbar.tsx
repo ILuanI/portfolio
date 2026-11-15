@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-const sections = ["Presentación", "Experiencia", "Proyectos", "Contacto"];
-const sectionIds = ["presentacion", "experiencia", "proyectos", "contacto"];
+const sections = ["Presentación", "Experiencia", "Proyectos", "Más sobre mí", "Contacto"];
+const sectionIds = ["presentacion", "experiencia", "proyectos", "sobre-mi", "contacto"];
 
 const controlClasses =
   "group inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full transition-colors duration-[180ms] ease-out hover:bg-accent/10 hover:text-accent focus-visible:bg-accent/10 focus-visible:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none";
@@ -23,11 +24,14 @@ const iconProps = {
   "aria-hidden": true as const,
 };
 
-export default function Navbar() {
+export default function Navbar({ page = "home" }: { page?: "home" | "about" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("presentacion");
+  const currentSection = page === "about" ? "sobre-mi" : activeSection;
+  const sectionHref = (id: string) => id === "sobre-mi" ? "/sobre-mi" : `${page === "about" ? "/" : ""}#${id}`;
 
   useEffect(() => {
+    if (page === "about") return;
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) setActiveSection(entry.target.id);
@@ -38,7 +42,7 @@ export default function Navbar() {
       if (section) observer.observe(section);
     }
     return () => observer.disconnect();
-  }, []);
+  }, [page]);
   return (
     <header className="site-header" onKeyDown={(event) => {
       if (event.key === "Escape" && menuOpen) {
@@ -50,20 +54,19 @@ export default function Navbar() {
         aria-label="Navegación principal"
         className="site-nav"
       >
-        <span className="status-dot nav-status" aria-hidden="true" />
-        <button type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)} className={`${controlClasses} md:hidden`}>
+        <button type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)} className={`${controlClasses} lg:hidden`}>
           <svg {...iconProps} className={scaleClasses}>
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {sections.map((section, index) => (
             <li key={section}>
-              <a
-                href={`#${sectionIds[index]}`}
-                aria-current={activeSection === sectionIds[index] ? "location" : undefined}
-                className={`${controlClasses} relative whitespace-nowrap px-3 text-sm font-medium lg:px-4 ${activeSection === sectionIds[index] ? "bg-accent/10 text-accent" : "text-white"}`}
+              <Link
+                href={sectionHref(sectionIds[index])}
+                aria-current={currentSection === sectionIds[index] ? (page === "about" ? "page" : "location") : undefined}
+                className={`${controlClasses} relative whitespace-nowrap px-3 text-sm font-medium lg:px-4 ${currentSection === sectionIds[index] ? "bg-accent/10 text-accent" : "text-white"}`}
               >
                 <span className="relative">
                   {section}
@@ -72,7 +75,7 @@ export default function Navbar() {
                     className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-accent transition-transform duration-[180ms] ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
                   />
                 </span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -95,10 +98,10 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-        <a href="#contacto" className="nav-contact primary-action">Contactar <span aria-hidden="true">↗</span></a>
+        <Link href={sectionHref("contacto")} className="nav-contact primary-action">Contactar <span aria-hidden="true">↗</span></Link>
       </nav>
       <div id="mobile-navigation" className="mobile-navigation" hidden={!menuOpen}>
-        {sections.map((section, index) => <a key={section} href={`#${sectionIds[index]}`} onClick={() => setMenuOpen(false)}>{section}<span aria-hidden="true">↗</span></a>)}
+        {sections.map((section, index) => <Link key={section} href={sectionHref(sectionIds[index])} aria-current={currentSection === sectionIds[index] ? (page === "about" ? "page" : "location") : undefined} onClick={() => setMenuOpen(false)}>{section}<span aria-hidden="true">↗</span></Link>)}
       </div>
     </header>
   );

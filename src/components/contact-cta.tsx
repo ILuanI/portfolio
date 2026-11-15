@@ -108,8 +108,7 @@ export default function ContactCta({ email, cvUrl, delivery }: ContactCtaProps) 
             <label htmlFor="contact-message">Tu mensaje</label>
             <span className="field-focus-line" aria-hidden="true" />
           </div>
-          <button type="submit" disabled={!email || !delivery} className={buttonClasses + " primary-action w-full cursor-pointer bg-accent text-background enabled:hover:bg-accent/80"}>Enviar mensaje<svg {...iconProps}><path d="M7 17 17 7M7 7h10v10" /></svg></button>
-          {delivery === "mailto" && <p className="contact-delivery-note">Se abrirá tu aplicación de correo con el mensaje preparado.</p>}
+          <button type="submit" disabled={!email || !delivery} className={buttonClasses + " primary-action w-full cursor-pointer bg-accent text-background enabled:hover:bg-accent/80"}><span>Enviar mensaje</span><svg {...iconProps}><path d="M7 17 17 7M7 7h10v10" /></svg></button>
           <p role="status" aria-live="polite" className="text-sm leading-relaxed text-accent">{formStatus}</p>
         </form>
       </div>

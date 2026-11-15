@@ -8,10 +8,12 @@ import ContactCta from "@/components/contact-cta";
 import { contact } from "@/data/contact";
 import Footer from "@/components/footer";
 import ConstellationTrail from "@/components/constellation-trail";
+import ScrollReveals from "@/components/scroll-reveals";
 
 export default function Home() {
   return (
     <div className="portfolio-shell flex flex-1 flex-col">
+      <ScrollReveals />
       <Navbar />
       <main className="portfolio-main">
         <ConstellationTrail />

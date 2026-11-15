@@ -4,6 +4,6 @@ export const contact: {
   delivery?: "mailto";
 } = {
   email: "lrosasp05@gmail.com",
-  cvUrl: "",
+  cvUrl: "/documents/cv-luiggi-rosas.pdf",
   delivery: "mailto",
 };

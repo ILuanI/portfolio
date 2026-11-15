@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="mx-auto w-full max-w-4xl px-6">
       <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-6 sm:flex-row sm:gap-4">
-        <p className="text-xs text-white/45">Elaborado por Luiggi Rosas</p>
+        <p className="text-sm text-white/45">Elaborado por Luiggi Rosas</p>
         <div className="flex items-center gap-1">
           {links.map((link) => link.url ? (
             <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={`${link.name} (abre en otra pestaña)`} title={link.name} className={iconClasses}>{link.icon}</a>

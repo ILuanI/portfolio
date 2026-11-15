@@ -25,14 +25,12 @@ export default function Presentation() {
       className="hero-section"
     >
       <div className="hero-copy">
-        <p className="section-kicker">
-          <span className="status-dot" /> 01 / Ingeniero de sistemas
-        </p>
+        <p className="hero-name">Luiggi Rosas</p>
         <h1
           id="presentation-title"
           className="hero-title"
         >
-          LUIGGI<br /><span>ROSAS</span>
+          INGENIERO<br /><span>DE SISTEMAS</span>
         </h1>
         <div className="hero-rule" aria-hidden="true" />
         <p className="hero-description">
@@ -89,7 +87,6 @@ export default function Presentation() {
           className="portrait-image"
         />
         </div>
-        <span className="portrait-caption"><span className="status-dot" /> Luiggi Rosas / PE</span>
       </div>
     </section>
   );
