@@ -1,16 +1,117 @@
-.preview { position: relative; display: block; flex-shrink: 0; width: 160px; max-width: 100%; aspect-ratio: 1.415; margin-top: 16px; overflow: hidden; border: 1px solid #ffffff35; border-radius: 8px; background: #fff; cursor: zoom-in; transition: border-color 180ms ease; }
-.preview:hover { border-color: #bdfb1f; }
-.thumbnail { display: block; width: 100%; height: 100%; object-fit: contain; }
-.eye { position: absolute; right: 5px; bottom: 5px; display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid #ffffff30; border-radius: 50%; background: #10150feb; color: #bdfb1f; }
-.dialog { position: fixed; inset: 0; width: min(1100px, 95vw); max-width: 95vw; max-height: 94dvh; margin: auto; padding: 0; overflow: auto; border: 1px solid #ffffff26; border-radius: 16px; background: #141610; color: #fff; }
-.dialog::backdrop { background: #000d; backdrop-filter: blur(6px); }
-.viewer { padding: 16px; }
-.header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
-.header p { font-size: 16px; line-height: 1.5; }
-.close { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #ffffff0d; color: #fff; }
-.close:hover { background: #ffffff1a; color: #bdfb1f; }
-.fullImage { display: block; width: auto; max-width: 100%; height: auto; max-height: 72dvh; margin-inline: auto; object-fit: contain; }
-.original { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-top: 12px; color: #c8dcad; font-size: 14px; }
-.original:hover { color: #bdfb1f; }
-@media (max-width: 767px) { .viewer { padding: 12px; } .header p { font-size: 14px; } }
-@media (prefers-reduced-motion: reduce) { .preview { transition: none; } }
+.preview {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 160px;
+  max-width: 100%;
+  aspect-ratio: 1.415;
+  margin-top: 16px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--foreground) 20.78%, transparent);
+  border-radius: 8px;
+  background: #fff;
+  cursor: zoom-in;
+  transition: border-color 180ms ease;
+}
+.preview:hover {
+  border-color: var(--accent);
+}
+.thumbnail {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.eye {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 18.82%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--surface) 92.16%, transparent);
+  color: var(--accent);
+}
+.dialog {
+  position: fixed;
+  inset: 0;
+  width: min(1100px, 95vw);
+  max-width: 95vw;
+  max-height: 94dvh;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid color-mix(in srgb, var(--foreground) 14.9%, transparent);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--foreground);
+}
+.dialog::backdrop {
+  background: #000d;
+  backdrop-filter: blur(6px);
+}
+.viewer {
+  padding: 16px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.header p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--foreground) 5.1%, transparent);
+  color: var(--foreground);
+}
+.close:hover {
+  background: color-mix(in srgb, var(--foreground) 10.2%, transparent);
+  color: var(--accent);
+}
+.fullImage {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 72dvh;
+  margin-inline: auto;
+  object-fit: contain;
+}
+.original {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.original:hover {
+  color: var(--accent);
+}
+@media (max-width: 767px) {
+  .viewer {
+    padding: 12px;
+  }
+  .header p {
+    font-size: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preview {
+    transition: none;
+  }
+}

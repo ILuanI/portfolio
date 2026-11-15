@@ -1,0 +1,57 @@
+:where(.root) :global(.celestial-art),
+:where(.root):global(.celestial-art) {
+  position: absolute;
+  color: var(--accent);
+  pointer-events: none;
+}
+:where(.root) :global(.celestial-art svg),
+:where(.root):global(.celestial-art svg) {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+:where(.root) :global(.celestial-observatory),
+:where(.root):global(.celestial-observatory) {
+  inset: -17%;
+  transform: rotate(-12deg);
+}
+:where(.root) :global(.observatory-satellite),
+:where(.root):global(.observatory-satellite) {
+  transform-origin: 160px 160px;
+  animation: celestial-orbit 48s linear infinite;
+}
+:where(.root) :global(.research-sweep),
+:where(.root):global(.research-sweep) {
+  transform-origin: 160px 160px;
+  animation: celestial-orbit 32s linear infinite;
+}
+:where(.root) :global(.celestial-research),
+:where(.root):global(.celestial-research) {
+  width: 230px;
+  height: 230px;
+  top: 20px;
+  left: -150px;
+  opacity: 0.45;
+  z-index: -1;
+}
+:where(.root) :global(.celestial-observatory),
+:where(.root):global(.celestial-observatory) {
+  opacity: 0.65;
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.celestial-research),
+  :where(.root):global(.celestial-research) {
+    width: 160px;
+    height: 160px;
+    left: auto;
+    right: -65px;
+    top: 5px;
+    opacity: 0.3;
+  }
+}
+
+@keyframes celestial-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}

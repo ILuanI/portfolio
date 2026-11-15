@@ -1,0 +1,85 @@
+:where(.root) :global(.curious-cat),
+:where(.root):global(.curious-cat) {
+  display: block;
+  width: 150px;
+  height: 125px;
+  margin: 0 auto 14px;
+  border-radius: 20px;
+  color: var(--accent);
+}
+:where(.root) :global(.curious-cat svg),
+:where(.root):global(.curious-cat svg) {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+:where(.root) :global(.cat-paw),
+:where(.root):global(.cat-paw) {
+  transform-origin: 99px 103px;
+  transition: transform 500ms ease;
+}
+:where(.root) :global(.cat-tail),
+:where(.root):global(.cat-tail) {
+  transform-origin: 76px 128px;
+  transition: transform 500ms ease;
+}
+:where(.root) :global(.cat-star),
+:where(.root):global(.cat-star) {
+  transform-origin: 131px 34px;
+  animation: starlight 3s ease-in-out infinite alternate;
+  transition: transform 500ms ease;
+  filter: drop-shadow(
+    0 0 7px color-mix(in srgb, var(--accent) 25.1%, transparent)
+  );
+}
+:where(.root) :global(.curious-cat:hover .cat-paw),
+:where(.root):global(.curious-cat:hover .cat-paw) {
+  transform: rotate(-17deg) translate(1px, -2px);
+}
+:where(.root) :global(.curious-cat:focus-visible .cat-paw),
+:where(.root):global(.curious-cat:focus-visible .cat-paw) {
+  transform: rotate(-17deg) translate(1px, -2px);
+}
+:where(.root) :global(.curious-cat.is-reaching .cat-paw),
+:where(.root):global(.curious-cat.is-reaching .cat-paw) {
+  transform: rotate(-17deg) translate(1px, -2px);
+}
+:where(.root) :global(.curious-cat:hover .cat-tail),
+:where(.root):global(.curious-cat:hover .cat-tail) {
+  transform: rotate(-10deg);
+}
+:where(.root) :global(.curious-cat.is-reaching .cat-tail),
+:where(.root):global(.curious-cat.is-reaching .cat-tail) {
+  transform: rotate(-10deg);
+}
+:where(.root) :global(.curious-cat:hover .cat-star),
+:where(.root):global(.curious-cat:hover .cat-star) {
+  transform: translate(5px, -9px) rotate(12deg);
+}
+:where(.root) :global(.curious-cat.is-reaching .cat-star),
+:where(.root):global(.curious-cat.is-reaching .cat-star) {
+  transform: translate(5px, -9px) rotate(12deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(.root) :global(.curious-cat .cat-paw),
+  :where(.root):global(.curious-cat .cat-paw) {
+    transform: none !important;
+  }
+  :where(.root) :global(.curious-cat .cat-tail),
+  :where(.root):global(.curious-cat .cat-tail) {
+    transform: none !important;
+  }
+  :where(.root) :global(.curious-cat .cat-star),
+  :where(.root):global(.curious-cat .cat-star) {
+    transform: none !important;
+  }
+}
+
+@keyframes starlight {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,290 @@
+:where(.root) :global(.journey-toggle),
+:where(.root):global(.journey-toggle) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 10.2%, transparent);
+  border-radius: 99px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 16px;
+  transition:
+    color 180ms,
+    border-color 180ms;
+}
+:where(.root) :global(.journey-toggle:hover),
+:where(.root):global(.journey-toggle:hover) {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+:where(.root) :global(.experience-list),
+:where(.root):global(.experience-list) {
+  margin-left: 12px;
+  padding-left: 28px;
+  border-left: 1px solid color-mix(in srgb, var(--accent) 27.06%, transparent);
+}
+:where(.root) :global(.experience-item),
+:where(.root):global(.experience-item) {
+  position: relative;
+  margin-bottom: 22px;
+}
+:where(.root) :global(.experience-item:last-child),
+:where(.root):global(.experience-item:last-child) {
+  margin-bottom: 0;
+}
+:where(.root) :global(.timeline-node),
+:where(.root):global(.timeline-node) {
+  position: absolute;
+  left: -38px;
+  top: 30px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 25.88%, transparent);
+  border-radius: 50%;
+  background: var(--background);
+  transition:
+    border-color 200ms,
+    box-shadow 200ms;
+}
+:where(.root) :global(.timeline-node::after),
+:where(.root):global(.timeline-node::after) {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+:where(.root) :global(.is-active .timeline-node),
+:where(.root):global(.is-active .timeline-node) {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 18.82%, transparent);
+}
+:where(.root) :global(.is-active .timeline-node::after),
+:where(.root):global(.is-active .timeline-node::after) {
+  inset: 5px;
+  background: var(--accent);
+}
+:where(.root) :global(.experience-card),
+:where(.root):global(.experience-card) {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--foreground) 7.84%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 96.08%, transparent);
+  transition:
+    border-color 200ms,
+    box-shadow 200ms;
+}
+:where(.root) :global(.is-active .experience-card),
+:where(.root):global(.is-active .experience-card) {
+  border-color: color-mix(in srgb, var(--accent) 33.33%, transparent);
+  box-shadow: 0 12px 40px #0003;
+}
+:where(.root) :global(.experience-summary),
+:where(.root):global(.experience-summary) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 106px;
+  padding: 23px 28px;
+  text-align: left;
+}
+:where(.root) :global(.experience-summary:focus-visible),
+:where(.root):global(.experience-summary:focus-visible) {
+  outline-offset: -4px;
+}
+:where(.root) :global(.company-mark),
+:where(.root):global(.company-mark) {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 12.16%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--foreground) 1.57%, transparent);
+  color: color-mix(in srgb, var(--foreground) 45.1%, transparent);
+  transition:
+    border-color 200ms,
+    color 200ms;
+}
+:where(.root) :global(.company-mark svg),
+:where(.root):global(.company-mark svg) {
+  width: 24px;
+  height: 24px;
+}
+:where(.root) :global(.company-mark.has-logo),
+:where(.root):global(.company-mark.has-logo) {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  background: #fff;
+}
+:where(.root) :global(.is-active .company-mark),
+:where(.root):global(.is-active .company-mark) {
+  border-color: color-mix(in srgb, var(--accent) 33.33%, transparent);
+  color: var(--accent);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--accent) 3.92%, transparent);
+}
+:where(.root) :global(.experience-summary-copy),
+:where(.root):global(.experience-summary-copy) {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+:where(.root) :global(.experience-period),
+:where(.root):global(.experience-period) {
+  color: var(--muted);
+  font:
+    13px/1.7 var(--font-geist-mono),
+    monospace;
+}
+:where(.root) :global(.is-active .experience-period),
+:where(.root):global(.is-active .experience-period) {
+  color: var(--accent);
+}
+:where(.root) :global(.experience-company),
+:where(.root):global(.experience-company) {
+  color: var(--foreground);
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+:where(.root) :global(.experience-role),
+:where(.root):global(.experience-role) {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 400;
+}
+:where(.root) :global(.is-active .experience-role),
+:where(.root):global(.is-active .experience-role) {
+  color: var(--accent);
+}
+:where(.root) :global(.experience-expand),
+:where(.root):global(.experience-expand) {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent);
+  font:
+    13px var(--font-geist-mono),
+    monospace;
+}
+:where(.root) :global(.experience-chevron),
+:where(.root):global(.experience-chevron) {
+  transition: transform 200ms;
+}
+:where(.root) :global(.is-active .experience-chevron),
+:where(.root):global(.is-active .experience-chevron) {
+  transform: rotate(180deg);
+}
+:where(.root) :global(.experience-details),
+:where(.root):global(.experience-details) {
+  margin: 0 28px;
+  padding-bottom: 26px;
+  border-top: 1px solid color-mix(in srgb, var(--foreground) 5.1%, transparent);
+  animation: arrive 250ms ease-out;
+}
+:where(.root) :global(.experience-details > p),
+:where(.root):global(.experience-details > p) {
+  font-size: 18px;
+}
+:where(.root) :global(.experience-details h4),
+:where(.root):global(.experience-details h4) {
+  font:
+    13px var(--font-geist-mono),
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+:where(.root) :global(.experience-details li),
+:where(.root):global(.experience-details li) {
+  font-size: 16px;
+}
+:where(.root) :global(.experience-details ul li.rounded-2xl),
+:where(.root):global(.experience-details ul li.rounded-2xl) {
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.experience-list),
+  :where(.root):global(.experience-list) {
+    margin-left: 8px;
+    padding-left: 20px;
+  }
+  :where(.root) :global(.timeline-node),
+  :where(.root):global(.timeline-node) {
+    left: -29px;
+    width: 16px;
+    height: 16px;
+  }
+  :where(.root) :global(.experience-summary),
+  :where(.root):global(.experience-summary) {
+    gap: 12px;
+    padding: 18px;
+  }
+  :where(.root) :global(.company-mark),
+  :where(.root):global(.company-mark) {
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+  }
+  :where(.root) :global(.experience-company),
+  :where(.root):global(.experience-company) {
+    font-size: 21px;
+  }
+  :where(.root) :global(.experience-period),
+  :where(.root):global(.experience-period) {
+    font-size: 12px;
+  }
+  :where(.root) :global(.experience-expand > span),
+  :where(.root):global(.experience-expand > span) {
+    display: none;
+  }
+  :where(.root) :global(.experience-role),
+  :where(.root):global(.experience-role) {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  :where(.root) :global(.experience-details),
+  :where(.root):global(.experience-details) {
+    margin-inline: 18px;
+    padding-bottom: 20px;
+  }
+  :where(.root) :global(.experience-details > p),
+  :where(.root):global(.experience-details > p) {
+    font-size: 17px;
+  }
+  :where(.root) :global(.experience-details ul),
+  :where(.root):global(.experience-details ul) {
+    gap: 6px;
+  }
+}
+:where(.root) :global(.journey-section),
+:where(.root):global(.journey-section) {
+  padding-block: 60px 80px;
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.journey-section),
+  :where(.root):global(.journey-section) {
+    padding-block: 45px 60px;
+  }
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

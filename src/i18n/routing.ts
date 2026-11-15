@@ -1,0 +1,10 @@
+import { defineRouting } from "next-intl/routing";
+
+export const routing = defineRouting({
+  locales: ["es", "en"],
+  defaultLocale: "es",
+  localePrefix: "as-needed",
+  localeDetection: false,
+  localeCookie: false,
+  pathnames: { "/": "/", "/sobre-mi": { es: "/sobre-mi", en: "/about" } },
+});

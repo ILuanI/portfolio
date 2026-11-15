@@ -1,0 +1,169 @@
+{
+  "UI": {
+    "instagramProfile": "Luiggi Rosas on Instagram",
+    "presentation": "Introduction",
+    "experience": "Experience",
+    "projectsNav": "Projects",
+    "aboutNav": "About me",
+    "contactNav": "Contact",
+    "mainNav": "Main navigation",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu",
+    "contact": "Get in touch",
+    "engineer": "SYSTEMS",
+    "systems": "ENGINEER",
+    "intro": "I combine analytical thinking and creativity to turn ideas into useful technology solutions.",
+    "cv": "Download CV",
+    "explore": "Explore my experience",
+    "portrait": "Portrait of Luiggi Rosas",
+    "responsibilities": "Key responsibilities",
+    "technologies": "Technologies",
+    "experienceTitle": "EXPERIENCE",
+    "experienceIntro": "The experiences that shape how I build.",
+    "stages": "View by stage",
+    "fullJourney": "View full journey",
+    "close": "Close",
+    "details": "View details",
+    "emptyJourney": "My professional experience will be available soon.",
+    "github": "View on GitHub",
+    "demo": "View demo",
+    "projects": "PROJECTS",
+    "featured": "Featured project",
+    "replyRequired": "Leave an email address or WhatsApp number so I can reply.",
+    "invalidPhone": "Check your WhatsApp number and include the country code.",
+    "messageRequired": "Write a message before continuing.",
+    "subject": "Contact from your portfolio",
+    "contactEmail": "Contact email: ",
+    "contactPhone": "Contact WhatsApp: ",
+    "prepared": "Your message is ready to send from your email app.",
+    "direct": "04 / Get in touch",
+    "create": "LET’S BUILD",
+    "together": "TOGETHER",
+    "contactIntro": "Tell me about your idea and how I can reach you.",
+    "copied": "Copied",
+    "copy": "Copy email",
+    "copyError": "Could not copy. Try again or use the form.",
+    "copySuccess": "Email copied to clipboard.",
+    "sendLabel": "Send a message",
+    "replyWhere": "How should I reply?",
+    "email": "Email",
+    "emailPlaceholder": "name@example.com",
+    "yourEmail": "Your email",
+    "yourPhone": "Your WhatsApp number",
+    "messagePlaceholder": "I have an idea about…",
+    "yourMessage": "Your message",
+    "send": "Send message",
+    "cat": "Play with the cat and its star",
+    "about": "ABOUT ME",
+    "aboutIntro": "Get to know my education, what I am learning, and my contributions to research.",
+    "linkedin": "My LinkedIn profile",
+    "aboutSections": "About me sections",
+    "education": "Education and languages",
+    "certifications": "Certifications",
+    "publications": "Research publications",
+    "journalArticle": "Journal article",
+    "back": "Back to home",
+    "closeCertificate": "Close certificate",
+    "originalPdf": "Open original PDF",
+    "originalImage": "Open original image",
+    "githubProfile": "Luiggi Rosas on GitHub",
+    "linkedinProfile": "Luiggi Rosas on LinkedIn",
+    "madeBy": "Built by Luiggi Rosas",
+    "peru": "Peru",
+    "newTab": "opens in a new tab",
+    "enlargeCertificate": "Enlarge certificate: {title}",
+    "certificate": "Certificate: {title}",
+    "certificateAlt": "Certificate for {title}"
+  },
+  "Controls": {
+    "light": "Switch to light mode",
+    "dark": "Switch to dark mode",
+    "theme": "Change theme",
+    "english": "Switch language to English",
+    "spanish": "Switch language to Spanish"
+  },
+  "Metadata": {
+    "homeTitle": "Luiggi Rosas - Portfolio",
+    "homeDescription": "Luiggi Rosas — systems engineer. Experience, projects and research.",
+    "aboutTitle": "About me | Luiggi Rosas",
+    "aboutDescription": "Education, languages, certifications and research publications by Luiggi Rosas."
+  },
+  "Content": {
+    "experiences": {
+      "rapidboard-fullstack": {
+        "role": "Full Stack Developer",
+        "location": "Trujillo, Peru",
+        "description": "Development of a GitHub repository analytics platform, from data extraction and organization to authentication and dashboards for tracking team activity.",
+        "responsibilities": [
+          "Designed and implemented an ETL pipeline to extract commits, pull requests and issues from the GitHub REST API and load them into PostgreSQL, using a dimensional star schema and automated synchronization.",
+          "Built the frontend with React, TypeScript, Zustand and Tailwind CSS, simplifying features and reorganizing components to improve navigation and user flows.",
+          "Integrated GitHub OAuth and GitHub Apps to authenticate users and connect repositories.",
+          "Built dashboards with Recharts to visualize commits, pull requests, review times and contributions by developer."
+        ]
+      },
+      "clafcomp-software-ti": {
+        "role": "Software Developer and IT Support",
+        "location": "Trujillo, Peru",
+        "description": "Management of the institutional platform, technical support and WhatsApp customer service automation to maintain continuity of digital services.",
+        "responsibilities": [
+          "Developed and updated the institutional WordPress website, administered Moodle and provided technical support to staff.",
+          "Implemented automated customer service workflows with Meta’s official WhatsApp API and n8n, integrating approved templates.",
+          "Managed the technical configuration in Meta Business, including access and permissions for using the WhatsApp API in automated workflows."
+        ]
+      },
+      "clafcomp-certificados": {
+        "role": "Freelance Web Developer",
+        "description": "Design, development and deployment of a certificate repository with QR code validation, adapted to the limitations of the existing infrastructure.",
+        "responsibilities": [
+          "Built the system with Laravel, Inertia and React, including roles, clients, organizations, signatories and certificates with QR codes for validation and viewing.",
+          "Selected the architecture and technologies based on the constraints of the HestiaCP environment and assessed WordPress as a possible solution.",
+          "Deployed the system and trained the user, supported by an instructional video serving as a user guide."
+        ]
+      },
+      "cirvos-infraestructura": {
+        "role": "Freelance · Infrastructure and Service Migration",
+        "description": "Assessment of DigitalOcean infrastructure and migration of services to a new Hetzner VPS, configuring deployments, domains and storage.",
+        "responsibilities": [
+          "Analyzed backups, resource usage, repositories and dependencies on DigitalOcean to define the migration plan.",
+          "Recommended and carried out the migration to Hetzner, configuring the VPS, Coolify, databases, storage and services including n8n, a Python bot and Chatwoot.",
+          "Implemented two WordPress websites and configured their domains, DNS records and deployments within the new infrastructure."
+        ]
+      },
+      "neonhouseled-web": {
+        "role": "Web Developer",
+        "location": "Remote",
+        "description": "Development and maintenance of a product management web application, including incident support, integration validation and SEO and performance improvements.",
+        "responsibilities": [
+          "Implemented new features, fixed issues and handled support tickets for the product management system.",
+          "Performed functional tests and endpoint validation with Postman to verify services and integrations.",
+          "Optimized performance, metadata and indexing with Ahrefs, Google Search Console, Lighthouse and PageSpeed Insights.",
+          "Deployed to Hostinger and configured symbolic links to ensure access to application images and files."
+        ]
+      }
+    },
+    "projects": {
+      "sales": {
+        "title": "Sales Management System",
+        "category": "Business management",
+        "description": "A system built with Laravel using MVC architecture and Supabase for data management. Queries and filters streamline data entry, search and information management."
+      },
+      "retrueque": {
+        "title": "Retrueque",
+        "category": "Work simulation",
+        "description": "A platform for exchanging home services through bartering. I developed the frontend with reusable components, responsive views, state management and REST API integration, working with Scrum."
+      },
+      "enrollment": {
+        "title": "Enrollment Management System",
+        "category": "Academic management",
+        "description": "A Laravel system featuring user and role management, a statistics dashboard and report generation. MVC architecture separates business logic, the interface and data handling."
+      }
+    },
+    "profile": {
+      "degree": "Systems Engineering",
+      "language": "English",
+      "level": "Intermediate",
+      "hours": "{count, plural, one {# hour} other {# hours}}"
+    },
+    "roles": "Roles and permissions"
+  }
+}

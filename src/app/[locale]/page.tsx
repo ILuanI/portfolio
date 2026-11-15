@@ -1,16 +1,20 @@
 import Navbar from "@/components/navbar";
 import Presentation from "@/components/presentation";
 import ExperienceTimeline from "@/components/experience-timeline";
-import { experiences } from "@/data/experiences";
+import { getExperiences, getProjects } from "@/i18n/content";
 import ProjectGallery from "@/components/project-gallery";
-import { projects } from "@/data/projects";
+
 import ContactCta from "@/components/contact-cta";
 import { contact } from "@/data/contact";
 import Footer from "@/components/footer";
 import ConstellationTrail from "@/components/constellation-trail";
 import ScrollReveals from "@/components/scroll-reveals";
 
-export default function Home() {
+export default async function Home() {
+  const [experiences, projects] = await Promise.all([
+    getExperiences(),
+    getProjects(),
+  ]);
   return (
     <div className="portfolio-shell flex flex-1 flex-col">
       <ScrollReveals />

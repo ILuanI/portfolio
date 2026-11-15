@@ -1,0 +1,210 @@
+:where(.root) :global(.hero-section),
+:where(.root):global(.hero-section) {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 56px;
+}
+:where(.root) :global(.hero-copy),
+:where(.root):global(.hero-copy) {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+:where(.root) :global(.hero-name),
+:where(.root):global(.hero-name) {
+  color: var(--muted);
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+:where(.root) :global(.hero-title),
+:where(.root):global(.hero-title) {
+  margin-top: 20px;
+  color: var(--foreground);
+  font-size: clamp(44px, 5.7vw, 70px);
+  line-height: 1.02;
+  font-weight: 850;
+  letter-spacing: -0.06em;
+}
+:where(.root) :global(.hero-title > span),
+:where(.root):global(.hero-title > span) {
+  background: linear-gradient(
+    100deg,
+    var(--foreground) 25%,
+    var(--foreground) 52%,
+    var(--accent) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+:where(.root) :global(.hero-rule),
+:where(.root):global(.hero-rule) {
+  width: 52px;
+  height: 3px;
+  margin-block: 25px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+:where(.root) :global(.hero-description),
+:where(.root):global(.hero-description) {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: clamp(16px, 1.7vw, 21px);
+  font-weight: 350;
+  line-height: 1.65;
+}
+:where(.root) :global(.portrait-composition),
+:where(.root):global(.portrait-composition) {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+}
+:where(.root) :global(.portrait-composition::before),
+:where(.root):global(.portrait-composition::before) {
+  content: "";
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.12;
+  filter: blur(45px);
+}
+:where(.root) :global(.portrait-mask),
+:where(.root):global(.portrait-mask) {
+  position: relative;
+  width: 87%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 50.2%, transparent);
+  border-radius: 57% 43% 33% 67% / 44% 41% 59% 56%;
+  box-shadow: 0 0 50px color-mix(in srgb, var(--accent) 7.06%, transparent);
+}
+:where(.root) :global(.portrait-image),
+:where(.root):global(.portrait-image) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+:where(.root) :global(.portrait-orbit),
+:where(.root):global(.portrait-orbit) {
+  position: absolute;
+  inset: -7%;
+  border: 1px solid color-mix(in srgb, var(--accent) 21.96%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+:where(.root) :global(.orbit-one),
+:where(.root):global(.orbit-one) {
+  transform: rotate(-24deg) scaleY(0.83);
+  animation: orbit-breathe 12s ease-in-out infinite alternate;
+}
+:where(.root) :global(.orbit-two),
+:where(.root):global(.orbit-two) {
+  inset: -4% -10%;
+  transform: rotate(35deg) scaleY(0.83);
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--accent) 14.51%, transparent);
+}
+:where(.root) :global(.portrait-star),
+:where(.root):global(.portrait-star) {
+  position: absolute;
+  top: -5%;
+  left: 23%;
+  z-index: 2;
+  color: var(--accent);
+  font-size: 38px;
+  text-shadow: 0 0 20px color-mix(in srgb, var(--accent) 56.47%, transparent);
+  animation: starlight 4s ease-in-out infinite alternate;
+}
+:where(.root) :global(.portrait-small-star),
+:where(.root):global(.portrait-small-star) {
+  position: absolute;
+  top: 9%;
+  right: -5%;
+  color: var(--foreground);
+  font-size: 19px;
+}
+
+@media (max-width: 1023px) {
+  :where(.root) :global(.hero-section),
+  :where(.root):global(.hero-section) {
+    gap: 35px;
+  }
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.hero-section),
+  :where(.root):global(.hero-section) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 58px;
+  }
+  :where(.root) :global(.hero-copy),
+  :where(.root):global(.hero-copy) {
+    text-align: center;
+    width: 100%;
+  }
+  :where(.root) :global(.hero-copy .section-kicker),
+  :where(.root):global(.hero-copy .section-kicker) {
+    justify-content: center;
+  }
+  :where(.root) :global(.hero-title),
+  :where(.root):global(.hero-title) {
+    font-size: clamp(32px, 8vw, 60px);
+    margin-top: 18px;
+  }
+  :where(.root) :global(.hero-rule),
+  :where(.root):global(.hero-rule) {
+    margin-inline: auto;
+    margin-block: 20px;
+  }
+  :where(.root) :global(.hero-description),
+  :where(.root):global(.hero-description) {
+    max-width: 440px;
+    margin-inline: auto;
+    font-size: 16px;
+  }
+  :where(.root) :global(.portrait-composition),
+  :where(.root):global(.portrait-composition) {
+    width: 265px;
+    max-width: 80%;
+  }
+  :where(.root) :global(.portrait-star),
+  :where(.root):global(.portrait-star) {
+    font-size: 29px;
+  }
+}
+@media (min-width: 768px) and (max-width: 850px) {
+  :where(.root) :global(.hero-title),
+  :where(.root):global(.hero-title) {
+    font-size: 44px;
+  }
+}
+:where(.root) :global(.hero-section),
+:where(.root):global(.hero-section) {
+  padding-block: 135px 125px;
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.hero-section),
+  :where(.root):global(.hero-section) {
+    padding-block: 75px 85px;
+  }
+}
+
+@keyframes starlight {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes orbit-breathe {
+  to {
+    transform: rotate(-12deg) scaleY(0.88);
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "UI": {
+    "instagramProfile": "Instagram de Luiggi Rosas",
+    "presentation": "Presentación",
+    "experience": "Experiencia",
+    "projectsNav": "Proyectos",
+    "aboutNav": "Más sobre mí",
+    "contactNav": "Contacto",
+    "mainNav": "Navegación principal",
+    "closeMenu": "Cerrar menú",
+    "openMenu": "Abrir menú",
+    "contact": "Contactar",
+    "engineer": "INGENIERO",
+    "systems": "DE SISTEMAS",
+    "intro": "Mi enfoque combina pensamiento analítico y creatividad para transformar ideas en soluciones tecnológicas útiles.",
+    "cv": "Descargar CV",
+    "explore": "Recorrer trayectoria",
+    "portrait": "Retrato de Luiggi Rosas",
+    "responsibilities": "Responsabilidades principales",
+    "technologies": "Tecnologías",
+    "experienceTitle": "EXPERIENCIA",
+    "experienceIntro": "Las experiencias que dan forma a mi manera de construir.",
+    "stages": "Ver por etapas",
+    "fullJourney": "Ver recorrido completo",
+    "close": "Cerrar",
+    "details": "Ver detalles",
+    "emptyJourney": "El recorrido profesional estará disponible próximamente.",
+    "github": "Ver en GitHub",
+    "demo": "Ver demo",
+    "projects": "PROYECTOS",
+    "featured": "Proyecto destacado",
+    "replyRequired": "Déjame un correo o un número de WhatsApp para poder responderte.",
+    "invalidPhone": "Revisa tu número de WhatsApp e incluye el código de país.",
+    "messageRequired": "Escribe un mensaje antes de continuar.",
+    "subject": "Contacto desde tu portafolio",
+    "contactEmail": "Correo de contacto: ",
+    "contactPhone": "WhatsApp de contacto: ",
+    "prepared": "El mensaje está preparado para enviarlo desde tu aplicación de correo.",
+    "direct": "04 / Contacto directo",
+    "create": "¿CREAMOS ALGO",
+    "together": "JUNTOS?",
+    "contactIntro": "Cuéntame tu idea y déjame una forma de responderte.",
+    "copied": "Copiado",
+    "copy": "Copiar correo",
+    "copyError": "No se pudo copiar. Inténtalo de nuevo o utiliza el formulario.",
+    "copySuccess": "Correo copiado al portapapeles.",
+    "sendLabel": "Enviar un mensaje",
+    "replyWhere": "¿Dónde te respondo?",
+    "email": "Correo",
+    "emailPlaceholder": "nombre@correo.com",
+    "yourEmail": "Tu correo",
+    "yourPhone": "Tu número de WhatsApp",
+    "messagePlaceholder": "Tengo una idea sobre…",
+    "yourMessage": "Tu mensaje",
+    "send": "Enviar mensaje",
+    "cat": "Jugar con el gato y su estrella",
+    "about": "MÁS SOBRE MÍ",
+    "aboutIntro": "Si quieres conocer más: mi formación, lo que sigo aprendiendo y mi aporte a la investigación.",
+    "linkedin": "Mi perfil en LinkedIn",
+    "aboutSections": "Secciones sobre mí",
+    "education": "Educación e idiomas",
+    "certifications": "Certificaciones",
+    "publications": "Publicaciones científicas",
+    "journalArticle": "Artículo de revista",
+    "back": "Volver al inicio",
+    "closeCertificate": "Cerrar certificado",
+    "originalPdf": "Abrir PDF original",
+    "originalImage": "Abrir imagen original",
+    "githubProfile": "GitHub de Luiggi Rosas",
+    "linkedinProfile": "LinkedIn de Luiggi Rosas",
+    "madeBy": "Elaborado por Luiggi Rosas",
+    "peru": "Perú",
+    "newTab": "abre en otra pestaña",
+    "enlargeCertificate": "Ampliar certificado: {title}",
+    "certificate": "Certificado: {title}",
+    "certificateAlt": "Certificado de {title}"
+  },
+  "Controls": {
+    "light": "Cambiar a modo claro",
+    "dark": "Cambiar a modo oscuro",
+    "theme": "Cambiar tema",
+    "english": "Cambiar idioma a inglés",
+    "spanish": "Cambiar idioma a español"
+  },
+  "Metadata": {
+    "homeTitle": "Luiggi Rosas - Portafolio",
+    "homeDescription": "Luiggi Rosas — ingeniero de sistemas. Experiencia, proyectos e investigación.",
+    "aboutTitle": "Más sobre mí | Luiggi Rosas",
+    "aboutDescription": "Educación, idiomas, certificados y publicaciones científicas de Luiggi Rosas."
+  },
+  "Content": {
+    "experiences": {
+      "rapidboard-fullstack": {
+        "role": "Desarrollador Full Stack",
+        "description": "Desarrollo de una plataforma de analítica de repositorios de GitHub, desde la extracción y organización de datos hasta la autenticación y los dashboards para visualizar la actividad del equipo.",
+        "responsibilities": [
+          "Diseñé e implementé un pipeline ETL para extraer commits, pull requests e issues desde la API REST de GitHub y cargarlos en PostgreSQL, con un modelo dimensional en estrella y sincronización automatizada.",
+          "Desarrollé el frontend con React, TypeScript, Zustand y Tailwind CSS, simplificando funcionalidades y reorganizando componentes para mejorar la navegación y los flujos de interacción.",
+          "Integré GitHub OAuth y GitHub Apps para autenticar usuarios y vincular repositorios.",
+          "Construí dashboards con Recharts para visualizar commits, pull requests, tiempos de revisión y contribuciones por desarrollador."
+        ],
+        "location": "Trujillo, Perú"
+      },
+      "clafcomp-software-ti": {
+        "role": "Desarrollador de Software y Soporte TI",
+        "description": "Gestión de la plataforma institucional, soporte técnico y automatización de la atención al cliente por WhatsApp para mantener la continuidad de los servicios digitales.",
+        "responsibilities": [
+          "Desarrollé y actualicé el sitio institucional en WordPress, administré Moodle y brindé soporte técnico al personal.",
+          "Implementé flujos automatizados de atención al cliente con la API oficial de WhatsApp de Meta y n8n, integrando plantillas aprobadas.",
+          "Gestioné la configuración técnica en Meta Business, incluida la habilitación y los permisos para usar la API de WhatsApp en los flujos automatizados."
+        ],
+        "location": "Trujillo, Perú"
+      },
+      "clafcomp-certificados": {
+        "role": "Desarrollador Web Freelance",
+        "description": "Diseño, desarrollo y despliegue de un repositorio de certificados con validación mediante códigos QR, adaptado a las limitaciones de la infraestructura existente.",
+        "responsibilities": [
+          "Desarrollé el sistema con Laravel, Inertia y React, incluyendo gestión de roles, clientes, entidades, firmantes y certificados con código QR para su validación y visualización.",
+          "Seleccioné la arquitectura y las tecnologías considerando las limitaciones del entorno con HestiaCP y evaluando la viabilidad de WordPress para este caso de uso.",
+          "Realicé el despliegue y la capacitación al usuario, complementada con un video instructivo como manual de uso."
+        ]
+      },
+      "cirvos-infraestructura": {
+        "role": "Freelance · Infraestructura y Migración de Servicios",
+        "description": "Evaluación de la infraestructura en DigitalOcean y migración de servicios a una nueva VPS en Hetzner, con configuración de despliegues, dominios y almacenamiento.",
+        "responsibilities": [
+          "Analicé respaldos, consumo de recursos, repositorios y dependencias en DigitalOcean para definir el plan de migración.",
+          "Recomendé y ejecuté la migración a Hetzner, configurando la VPS, Coolify, bases de datos, almacenamiento y servicios como n8n, un bot en Python y Chatwoot.",
+          "Implementé dos sitios en WordPress y configuré sus dominios, registros DNS y despliegue dentro de la nueva infraestructura."
+        ]
+      },
+      "neonhouseled-web": {
+        "role": "Desarrollador Web",
+        "description": "Desarrollo y mantenimiento de un sistema web de gestión de productos, con soporte a incidencias, validación de integraciones y mejoras de SEO y rendimiento.",
+        "responsibilities": [
+          "Implementé nuevas funcionalidades, corregí incidencias y atendí tickets de soporte del sistema de gestión de productos.",
+          "Realicé pruebas funcionales y validación de endpoints con Postman para verificar servicios e integraciones.",
+          "Optimicé rendimiento, metadatos e indexación con Ahrefs, Google Search Console, Lighthouse y PageSpeed Insights.",
+          "Realicé despliegues en Hostinger y configuré enlaces simbólicos para asegurar el acceso a imágenes y archivos de la aplicación."
+        ],
+        "location": "Remoto"
+      }
+    },
+    "projects": {
+      "sales": {
+        "title": "Sistema de Ventas",
+        "category": "Gestión comercial",
+        "description": "Sistema desarrollado con Laravel bajo arquitectura MVC y Supabase para la gestión de datos. Consultas y filtros para agilizar el registro, la búsqueda y el control de la información."
+      },
+      "retrueque": {
+        "title": "Retrueque",
+        "category": "Simulación laboral",
+        "description": "Plataforma para intercambiar servicios a domicilio mediante trueque. Desarrollé el frontend con componentes reutilizables, vistas responsivas, manejo de estados e integración con APIs REST, trabajando con Scrum."
+      },
+      "enrollment": {
+        "title": "Sistema de Matrículas",
+        "category": "Gestión académica",
+        "description": "Sistema en Laravel con gestión de usuarios y roles, dashboard de estadísticas y generación de reportes. Arquitectura MVC para separar la lógica de negocio, la interfaz y el manejo de datos."
+      }
+    },
+    "profile": {
+      "degree": "Ingeniería de Sistemas",
+      "language": "Inglés",
+      "level": "Intermedio",
+      "hours": "{count, plural, one {# hora} other {# horas}}"
+    },
+    "roles": "Roles y permisos"
+  }
+}

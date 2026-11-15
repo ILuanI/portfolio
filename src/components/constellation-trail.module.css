@@ -1,0 +1,131 @@
+:where(.root) :global(.constellation-trail),
+:where(.root):global(.constellation-trail) {
+  position: absolute;
+  inset: 0 -35px;
+  pointer-events: none;
+  z-index: 0;
+}
+:where(.root) :global(.constellation-trail > svg),
+:where(.root):global(.constellation-trail > svg) {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+:where(.root) :global(.starfield),
+:where(.root):global(.starfield) {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+:where(.root) :global(.field-star),
+:where(.root):global(.field-star) {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--muted);
+  opacity: 0.25;
+  animation: distant-star 6s ease-in-out infinite alternate;
+}
+:where(.root) :global(.field-star.is-bright),
+:where(.root):global(.field-star.is-bright) {
+  width: 3px;
+  height: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 9px color-mix(in srgb, var(--accent) 30.2%, transparent);
+}
+:where(.root) :global(.star-cluster),
+:where(.root):global(.star-cluster) {
+  position: absolute;
+}
+:where(.root) :global(.star-cluster svg),
+:where(.root):global(.star-cluster svg) {
+  width: 100%;
+  height: auto;
+}
+:where(.root) :global(.journey-dashes),
+:where(.root):global(.journey-dashes) {
+  animation: trail-drift 16s linear infinite;
+}
+:where(.root) :global(.trail-stars),
+:where(.root):global(.trail-stars) {
+  animation: starlight 5s ease-in-out infinite alternate;
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.constellation-trail),
+  :where(.root):global(.constellation-trail) {
+    inset-inline: -10px;
+  }
+}
+:where(.root) :global(.star-cluster),
+:where(.root):global(.star-cluster) {
+  width: 310px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+:where(.root) :global(.cluster-north),
+:where(.root):global(.cluster-north) {
+  top: 1%;
+  left: -12%;
+  transform: rotate(-18deg);
+}
+:where(.root) :global(.cluster-east),
+:where(.root):global(.cluster-east) {
+  top: 39%;
+  right: -13%;
+  transform: rotate(16deg);
+}
+:where(.root) :global(.cluster-south),
+:where(.root):global(.cluster-south) {
+  top: 76%;
+  left: -13%;
+  transform: rotate(-15deg);
+}
+:where(.root) :global(.constellation-trail),
+:where(.root):global(.constellation-trail) {
+  opacity: 0.7;
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.star-cluster),
+  :where(.root):global(.star-cluster) {
+    width: 170px;
+    opacity: 0.55;
+  }
+  :where(.root) :global(.cluster-north),
+  :where(.root):global(.cluster-north) {
+    left: -50px;
+    top: 1%;
+  }
+  :where(.root) :global(.cluster-east),
+  :where(.root):global(.cluster-east) {
+    right: -65px;
+  }
+  :where(.root) :global(.cluster-south),
+  :where(.root):global(.cluster-south) {
+    left: -65px;
+  }
+}
+
+@keyframes trail-drift {
+  to {
+    stroke-dashoffset: -110;
+  }
+}
+
+@keyframes starlight {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes distant-star {
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0.5;
+  }
+}

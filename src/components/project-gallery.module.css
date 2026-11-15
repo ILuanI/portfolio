@@ -1,0 +1,235 @@
+:where(.root) :global(.featured-project),
+:where(.root):global(.featured-project) {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 34px;
+  padding: 38px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 25.88%, transparent);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      ellipse at top right,
+      color-mix(in srgb, var(--accent) 5.49%, transparent),
+      transparent 60%
+    ),
+    var(--surface);
+}
+:where(.root) :global(.featured-visual),
+:where(.root):global(.featured-visual) {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 1.65;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--foreground) 7.06%, transparent);
+  border-radius: 14px;
+}
+:where(.root) :global(.project-visual-caption),
+:where(.root):global(.project-visual-caption) {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(
+    transparent,
+    color-mix(in srgb, var(--background) 92.16%, transparent)
+  );
+  color: var(--accent);
+  font:
+    12px/1.5 var(--font-geist-mono),
+    monospace;
+  text-transform: uppercase;
+}
+:where(.root) :global(.featured-project-copy),
+:where(.root):global(.featured-project-copy) {
+  min-width: 0;
+}
+:where(.root) :global(.featured-project-copy > .section-kicker),
+:where(.root):global(.featured-project-copy > .section-kicker) {
+  font-size: 13px;
+}
+:where(.root) :global(.featured-project-copy h3),
+:where(.root):global(.featured-project-copy h3) {
+  margin-top: 10px;
+  color: var(--foreground);
+  font-size: clamp(24px, 2.7vw, 32px);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+:where(.root) :global(.featured-project-copy > p:not(.section-kicker)),
+:where(.root):global(.featured-project-copy > p:not(.section-kicker)) {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+:where(.root) :global(.project-action),
+:where(.root):global(.project-action) {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: 22px;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--foreground) 12.55%, transparent);
+  color: var(--foreground);
+  font-size: 16px;
+  transition: color 180ms;
+}
+:where(.root) :global(a.project-action:hover),
+:where(.root):global(a.project-action:hover) {
+  color: var(--accent);
+}
+:where(.root) :global(.project-grid),
+:where(.root):global(.project-grid) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+:where(.root) :global(.project-technologies),
+:where(.root):global(.project-technologies) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+:where(.root) :global(.project-technologies > li),
+:where(.root):global(.project-technologies > li) {
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 14.9%, transparent);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+:where(.root) :global(.project-grid > li),
+:where(.root):global(.project-grid > li) {
+  min-width: 0;
+}
+:where(.root) :global(.project-card),
+:where(.root):global(.project-card) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 22px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 7.84%, transparent);
+  border-radius: 16px;
+  background: var(--surface);
+  transition:
+    transform 200ms,
+    border-color 200ms;
+}
+:where(.root) :global(.project-card:hover),
+:where(.root):global(.project-card:hover) {
+  border-color: color-mix(in srgb, var(--accent) 33.33%, transparent);
+  transform: translateY(-4px);
+}
+:where(.root) :global(.project-card:focus-within),
+:where(.root):global(.project-card:focus-within) {
+  border-color: color-mix(in srgb, var(--accent) 33.33%, transparent);
+  transform: translateY(-4px);
+}
+:where(.root) :global(.project-card-heading .section-kicker),
+:where(.root):global(.project-card-heading .section-kicker) {
+  font-size: 12px;
+}
+:where(.root) :global(.project-card-preview),
+:where(.root):global(.project-card-preview) {
+  position: relative;
+  height: 115px;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+:where(.root) :global(.project-card h3),
+:where(.root):global(.project-card h3) {
+  margin-top: 20px;
+  color: var(--foreground);
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+:where(.root) :global(.project-card > p),
+:where(.root):global(.project-card > p) {
+  flex: 1;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+:where(.root) :global(.project-card .project-action),
+:where(.root):global(.project-card .project-action) {
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid color-mix(in srgb, var(--foreground) 5.1%, transparent);
+  border-bottom: none;
+  padding-top: 14px;
+}
+
+@media (max-width: 1023px) {
+  :where(.root) :global(.featured-project),
+  :where(.root):global(.featured-project) {
+    gap: 26px;
+    padding: 28px;
+  }
+  :where(.root) :global(.project-grid),
+  :where(.root):global(.project-grid) {
+    gap: 14px;
+  }
+  :where(.root) :global(.project-card),
+  :where(.root):global(.project-card) {
+    padding: 18px;
+  }
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.featured-project),
+  :where(.root):global(.featured-project) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 22px;
+    border-radius: 18px;
+  }
+  :where(.root) :global(.featured-visual),
+  :where(.root):global(.featured-visual) {
+    aspect-ratio: 1.7;
+  }
+  :where(.root) :global(.project-grid),
+  :where(.root):global(.project-grid) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  :where(.root) :global(.project-card),
+  :where(.root):global(.project-card) {
+    padding: 22px;
+  }
+  :where(.root) :global(.project-card-preview),
+  :where(.root):global(.project-card-preview) {
+    height: 155px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(.root) :global(.project-card:hover),
+  :where(.root):global(.project-card:hover) {
+    transform: none;
+  }
+  :where(.root) :global(.project-card:focus-within),
+  :where(.root):global(.project-card:focus-within) {
+    transform: none;
+  }
+}
+:where(.root) :global(.projects-section),
+:where(.root):global(.projects-section) {
+  padding-block: 65px 80px;
+}
+@media (max-width: 767px) {
+  :where(.root) :global(.projects-section),
+  :where(.root):global(.projects-section) {
+    padding-block: 45px 60px;
+  }
+}
