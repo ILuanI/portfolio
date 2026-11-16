@@ -1,4 +1,15 @@
 {
+  "Status": {
+    "notFoundTitle": "Esta página no existe",
+    "notFoundDescription": "Puede que el enlace haya cambiado o que la página ya no esté disponible. Volvamos a un lugar conocido.",
+    "maintenanceTitle": "Estamos en mantenimiento",
+    "maintenanceDescription": "El portafolio no está disponible en este momento. Inténtalo de nuevo en unos instantes.",
+    "maintenanceLabel": "Volvemos pronto",
+    "home": "Volver al inicio",
+    "retry": "Reintentar",
+    "contact": "Escríbeme",
+    "contactHint": "Si necesitas contactarme, sigo por aquí."
+  },
   "UI": {
     "instagramProfile": "Instagram de Luiggi Rosas",
     "presentation": "Presentación",
