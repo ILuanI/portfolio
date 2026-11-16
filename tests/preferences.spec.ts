@@ -25,9 +25,11 @@ for(const theme of ['light','dark'] as const) for(const route of routes) {
     await page.emulateMedia({colorScheme:theme});
     const response = await page.goto(route.url);
     expect(response?.status()).toBe(200);
-    expect(response?.headers()['link']).toContain('hreflang="en"');
+    await expect(page.locator('head link[rel="alternate"][hreflang="en"]')).toHaveAttribute('href',new RegExp(route.about ? '/en/about/?$' : '/en/?$'));
     await expect(page.locator('html')).toHaveAttribute('lang',route.lang);
     await expect(page.locator('html')).toHaveClass(new RegExp(`\\b${theme}\\b`));
+    const controls = (route.lang === 'en' ? en : es).Controls;
+    await expect(page.getByRole('button',{name:controls[theme === 'light' ? 'dark' : 'light'],exact:true})).toBeEnabled({timeout:15_000});
     await expect(page.locator('h1')).toContainText(route.heading);
     const colors = await page.locator('body').evaluate(el => ({background:getComputedStyle(el).backgroundColor, color:getComputedStyle(el).color}));
     expect(colors.background).toBe(theme==='light' ? 'rgb(250, 250, 247)' : 'rgb(10, 10, 10)');
@@ -71,17 +73,17 @@ test('theme follows system, persists, syncs tabs and survives locale navigation'
   await page.getByRole('button',{name:'Cambiar a modo claro'}).click();
   await expect(other.locator('html')).toHaveClass(/light/);
   await page.getByRole('button',{name:'Cambiar idioma a inglés'}).click();
-  await expect(page).toHaveURL('/en');
+  await expect(page).toHaveURL('/en/');
   await expect(page.locator('html')).toHaveClass(/light/);
 });
 
 test('language switch preserves route, query and hash; Spanish remains default', async ({page, context}) => {
   await page.goto('/sobre-mi?source=test#publicaciones');
   await page.getByRole('button',{name:'Cambiar idioma a inglés'}).click();
-  await expect(page).toHaveURL('/en/about?source=test#publicaciones');
+  await expect(page).toHaveURL('/en/about/?source=test#publicaciones');
   await expect(page.locator('html')).toHaveAttribute('lang','en');
   await page.getByRole('link',{name:'Back to home'}).click();
-  await expect(page).toHaveURL('/en#presentacion');
+  await expect(page).toHaveURL('/en/#presentacion');
   await page.getByRole('button',{name:'Switch language to Spanish'}).click();
   await expect(page).toHaveURL('/#presentacion');
   await context.setExtraHTTPHeaders({'Accept-Language':'en-US,en;q=0.9'});
@@ -99,7 +101,7 @@ test('mobile menu supports keyboard dismissal and localized navigation', async (
   await expect(page.getByRole('button',{name:'Open menu'})).toBeFocused();
   await page.getByRole('button',{name:'Open menu'}).click();
   await page.locator('#mobile-navigation').getByRole('link',{name:'About me'}).click();
-  await expect(page).toHaveURL('/en/about');
+  await expect(page).toHaveURL('/en/about/');
 });
 
 test('public assets bypass locale routing', async ({request}) => {

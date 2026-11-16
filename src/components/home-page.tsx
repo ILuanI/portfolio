@@ -9,8 +9,11 @@ import { contact } from "@/data/contact";
 import Footer from "@/components/footer";
 import ConstellationTrail from "@/components/constellation-trail";
 import ScrollReveals from "@/components/scroll-reveals";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "next-intl";
 
-export default async function Home() {
+export default async function HomePage({ locale }: { locale: Locale }) {
+  setRequestLocale(locale);
   const [experiences, projects] = await Promise.all([
     getExperiences(),
     getProjects(),
